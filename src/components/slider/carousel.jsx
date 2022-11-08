@@ -3,21 +3,18 @@ import { useSwipeable } from "react-swipeable";
 
 import "./carousel.css";
 
-export const CarouselItem = ( { poza1, poza2, poza3, width }) => {
-
+export const CarouselItem = ( { children, width }) => {
   return (
     <div className="carousel-item" style={{ width: width }}>
-      <img src={poza1} alt="nu merge"/>
-      <img src={poza2} alt="nu merge"/>
-      <img src={poza3} alt="nu merge"/>
+      {children}
     </div>
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, poze }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-
+console.log(poze)
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
@@ -58,8 +55,8 @@ const Carousel = ({ children }) => {
         className="inner"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: "100%" });
+        {poze.map((children) => {
+          return <img src={children}/>
         })}
       </div>
       <div className="indicators">
