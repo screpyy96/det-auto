@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from '@reach/router';
 
 const NavWrapper = styled.nav`
   width: 100%;
@@ -7,4 +8,9 @@ const NavWrapper = styled.nav`
   color: white;
 `;
 
-export { NavWrapper };
+const LinkStyle = styled(Link)`
+  color: white;
+  text-decoration: none;
+`;
+
+export { NavWrapper, LinkStyle };

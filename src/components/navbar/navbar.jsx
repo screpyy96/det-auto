@@ -1,12 +1,14 @@
 import React from 'react';
-import { Link } from '@reach/router';
-import { NavWrapper } from './navbar.style';
+import { LinkStyle, NavWrapper } from './navbar.style';
 
 const Navbar = () => {
   return (
     <NavWrapper>
-      <Link to='/'>Home</Link>
-      <Link to='/despre-noi'>Despre Noi</Link>
+      <LinkStyle to='/'>Home</LinkStyle>
+      <LinkStyle to='/despre-noi'>Despre Noi</LinkStyle>
+      <LinkStyle to='/galerie'>Galerie</LinkStyle>
+      <LinkStyle to='/pachete'>Pachete</LinkStyle>
+      <LinkStyle to='/contact'>Contact</LinkStyle>
     </NavWrapper>
   );
 };
