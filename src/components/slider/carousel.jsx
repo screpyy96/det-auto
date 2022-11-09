@@ -14,7 +14,6 @@ export const CarouselItem = ( { children, width }) => {
 const Carousel = ({ children, poze }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-console.log(poze)
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
@@ -56,7 +55,7 @@ console.log(poze)
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {poze.map((children) => {
-          return <img src={children}/>
+          return <img key={children}src={children}/>
         })}
       </div>
       <div className="indicators">
