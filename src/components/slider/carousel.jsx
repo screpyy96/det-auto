@@ -55,7 +55,7 @@ const Carousel = ({ children, poze }) => {
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {poze.map((children) => {
-          return <img key={children}src={children}/>
+          return <img key={children}src={children} alt={children}/>
         })}
       </div>
       <div className="indicators">

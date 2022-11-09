@@ -6,7 +6,7 @@ import poza2 from '../../data/images/2.jpg'
 import poza3 from '../../data/images/3.jpg'
 
  const Slider = () => {
-  const [poze, setPoze] = useState([poza1, poza2, poza3])
+  const [poze] = useState([poza1, poza2, poza3])
  
   return (
     <div className="App">
