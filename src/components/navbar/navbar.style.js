@@ -39,7 +39,7 @@ margin-left: 1rem;
 
 const NavigationMenu = styled.div`
 margin-left: auto;
-// display: block;
+
 `
 
 const BurgerWrapper = styled.div`
@@ -68,9 +68,7 @@ const BurgerWrapper = styled.div`
 
 const UlStyle = styled.ul`
 padding: 0;
-
-
-
+display: flex;
 @media screen and (max-width: 768px) {
     position: absolute;
     top: 60px;
@@ -81,7 +79,7 @@ padding: 0;
     background-color: white;
     border-top: 1px solid black; 
     z-index: 2; 
-    
+    display: ${({ setIsNavExpanded }) => (setIsNavExpanded ? "block" : "none")};
   `
   
 const LiStyle = styled.li`

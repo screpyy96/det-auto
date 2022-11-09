@@ -19,7 +19,7 @@ const Navbar = ({isNavExpanded, setIsNavExpanded}) => {
       <BurgerWrapper onClick={() => handleExpanded()}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-    </svg>s
+    </svg>
       </BurgerWrapper>
       {isNavExpanded ? (
       <NavigationMenu onClick={closeSideBar}>
@@ -42,7 +42,28 @@ const Navbar = ({isNavExpanded, setIsNavExpanded}) => {
           </UlStyle>
         
       </NavigationMenu>
-      ):(<></>)}
+      ):(<>
+      <NavigationMenu onClick={closeSideBar}>
+          <UlStyle  >
+            <LiStyle>
+              <LinkStyle to='/'>Home</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/despre-noi'>Despre</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/galerie'>Galerie</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/pachete'>Pachete</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/contact'>Contact</LinkStyle>
+            </LiStyle>
+          </UlStyle>
+        
+      </NavigationMenu>
+      </>)}
     </NavWrapper>
   );
 };
