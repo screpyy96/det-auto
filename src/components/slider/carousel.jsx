@@ -12,15 +12,16 @@ export const CarouselItem = ( { children, width }) => {
 };
 
 const Carousel = ({ children, poze }) => {
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
       newIndex = React.Children.count(children) - 1;
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = 0;
     }
-
     setActiveIndex(newIndex);
   };
 

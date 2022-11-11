@@ -1,9 +1,11 @@
 import React from 'react';
-import Slider from '../components/slider/slider';
+import Carousele from '../components/carousel/carousel';
+// import Slider from '../components/slider/slider';
 
 const Home = () => {
   return <div>
-    <Slider/>
+    {/* <Slider/> */}
+    <Carousele/>
   </div>;
 };
 
