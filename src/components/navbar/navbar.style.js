@@ -2,45 +2,44 @@ import styled from 'styled-components';
 import { Link } from '@reach/router';
 
 const NavWrapper = styled.nav`
-height: 60px;
-width: 100%;
-display: flex;
-align-items: center;
-position: relative;
-padding: 0.5rem 0rem;
-background-color: #fff;
-color: black;
-box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
-
-
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 2rem;
+  background-color: #fff;
+  color: black;
+  font-size: 20px;
+  box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  font-weight: 600;
 `;
 
 const LinkStyle = styled(Link)`
-text-decoration: none;
-display: block;
-width: 100%;
-list-style-type: none;
-color: black;
-width: 100%;
-padding: 1.5rem 0;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  list-style-type: none;
+  color: black;
+  width: 100%;
 
-&:hover {
-  background-color: #eee;
-}
+  &:hover {
+    border-bottom: 2px solid black;
+    color: red;
+  }
 `;
 
 const BrandName = styled.a`
-
-text-decoration: none;
-color: black;
-font-size: 1.3rem;
-margin-left: 1rem;
-` 
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+`;
 
 const NavigationMenu = styled.div`
-margin-left: auto;
-
-`
+  margin-left: auto;
+`;
 
 const BurgerWrapper = styled.div`
   border: 0;
@@ -56,15 +55,14 @@ const BurgerWrapper = styled.div`
   transform: translateY(-50%);
   color: black;
   display: none;
-  
-  &&:hover {
+
+  &:hover {
     background-color: #b0b1b6;
   }
-
   @media screen and (max-width: 768px) {
-      display: block;
-}
-  `
+    display: block;
+  }
+`;
 
 const UlStyle = styled.ul`
 padding: 0;
@@ -79,16 +77,24 @@ display: flex;
     background-color: white;
     border-top: 1px solid black; 
     z-index: 2; 
-    display: ${({ setIsNavExpanded }) => (setIsNavExpanded ? "block" : "none")};
-  `
-  
-const LiStyle = styled.li`
-  
-text-align: center;
-margin: 0;
-list-style-type: none;
-margin: 0 1rem;
-display: block;
-`
-export { NavWrapper, LinkStyle, NavigationMenu, BrandName, UlStyle, BurgerWrapper, LiStyle};
+    display: ${({ setIsNavExpanded }) => (setIsNavExpanded ? 'block' : 'none')};
+  `;
 
+const LiStyle = styled.li`
+  text-align: center;
+  list-style-type: none;
+  height: 50px;
+  padding: 1rem;
+  display: block;
+  text-transform: uppercase;
+`;
+
+export {
+  NavWrapper,
+  LinkStyle,
+  NavigationMenu,
+  BrandName,
+  UlStyle,
+  BurgerWrapper,
+  LiStyle,
+};

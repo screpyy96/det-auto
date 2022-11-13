@@ -1,12 +1,16 @@
 import React from 'react';
+import { Cards } from '../components/card/card';
 import Carousele from '../components/carousel/carousel';
-// import Slider from '../components/slider/slider';
+import { HeroText } from '../components/hero-text/hero-text';
 
 const Home = () => {
-  return <div>
-    {/* <Slider/> */}
-    <Carousele/>
-  </div>;
+  return (
+    <div>
+      <Carousele />
+      <HeroText />
+      <Cards />
+    </div>
+  );
 };
 
 export default Home;

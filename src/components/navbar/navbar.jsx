@@ -1,82 +1,87 @@
-import { Link } from '@reach/router';
 import React from 'react';
-import './navbar.css'
-const Navbar = ({isNavExpanded, setIsNavExpanded}) => {
-  
+import {
+  LinkStyle,
+  NavWrapper,
+  NavigationMenu,
+  BrandName,
+  UlStyle,
+  BurgerWrapper,
+  LiStyle,
+} from './navbar.style';
 
+const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
+  const handleExpanded = () => {
+    setIsNavExpanded(!isNavExpanded);
+    console.log(isNavExpanded);
+  };
+
+  const closeSideBar = () => {
+    setIsNavExpanded(false);
+  };
   return (
-    <nav className="navigation">
-      <a href="/" className="brand-name">
-        Detailing Auto Suceava
-      </a>
-      <button className="hamburger" onClick={() => {setIsNavExpanded(!isNavExpanded)}}>
-        {/* icon from heroicons.com */}
+    <NavWrapper>
+      <BrandName href='/' className='brand-name'>
+        Detailing Auto D&S
+      </BrandName>
+      <BurgerWrapper onClick={() => handleExpanded()}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="white"
+          xmlns='http://www.w3.org/2000/svg'
+          fill='none'
+          viewBox='0 0 24 24'
+          stroke-width='1.5'
+          stroke='currentColor'
         >
           <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-            clipRule="evenodd"
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
           />
         </svg>
-      </button>
-      <div
-        className={
-          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-        }>
-        <ul>
-          <li>
-            <button className='nav-btn' >
-                <span></span>
-  <span></span>
-  <span></span>
-  <span></span> 
-              <Link className='link' to="/">Home</Link>
-            </button>
-          </li>
-          <li>
-            <button className='nav-btn' >
-                <span></span>
-  <span></span>
-  <span></span>
-  <span></span> 
-              <Link className='link' to="/despre-noi">Despre</Link>
-            </button>
-          </li>
-          <li>
-            <button className='nav-btn' >
-                <span></span>
-  <span></span>
-  <span></span>
-  <span></span> 
-              <Link className='link' to="/pachete">Pachete</Link>
-            </button>
-          </li>
-          <li>
-            <button className='nav-btn' >
-                <span></span>
-  <span></span>
-  <span></span>
-  <span></span> 
-              <Link className='link' to="/galerie">Galerie</Link>
-            </button>
-          </li>
-          <li>
-            <button className='nav-btn' >
-                <span></span>
-  <span></span>
-  <span></span>
-  <span></span> 
-              <Link className='link' to="/contact">Contact</Link>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </BurgerWrapper>
+      {isNavExpanded ? (
+        <NavigationMenu onClick={closeSideBar}>
+          <UlStyle setIsNavExpanded={setIsNavExpanded}>
+            <LiStyle>
+              <LinkStyle to='/'>Home</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/despre-noi'>Despre</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/galerie'>Galerie</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/pachete'>Pachete</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle to='/contact'>Contact</LinkStyle>
+            </LiStyle>
+          </UlStyle>
+        </NavigationMenu>
+      ) : (
+        <>
+          <NavigationMenu onClick={closeSideBar}>
+            <UlStyle>
+              <LiStyle>
+                <LinkStyle to='/'>Home</LinkStyle>
+              </LiStyle>
+              <LiStyle>
+                <LinkStyle to='/despre-noi'>Despre</LinkStyle>
+              </LiStyle>
+              <LiStyle>
+                <LinkStyle to='/galerie'>Galerie</LinkStyle>
+              </LiStyle>
+              <LiStyle>
+                <LinkStyle to='/pachete'>Pachete</LinkStyle>
+              </LiStyle>
+              <LiStyle>
+                <LinkStyle to='/contact'>Contact</LinkStyle>
+              </LiStyle>
+            </UlStyle>
+          </NavigationMenu>
+        </>
+      )}
+    </NavWrapper>
   );
 };
 

@@ -1,0 +1,82 @@
+.card-wrapper{
+  padding-top: 80px;
+  padding-bottom: 80px;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+width: 100%;
+margin: 0 auto;
+grid-gap: 10px;
+justify-items: center;
+}
+
+
+.card {
+  width: 12rem;
+  cursor: pointer;
+  width: 250px;
+  height: 300px;
+}
+@media screen and (max-width: 768px) {
+.card-wrapper {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  width: 96%;
+}
+
+.card {
+  width: 100%;
+  cursor: pointer;
+
+}
+}
+
+.content {
+  text-align: center;
+  position: relative;
+  transition: all 2.25s;
+  background-image: url("../../data/images/valorificare.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5em;
+  transform-style: preserve-3d;
+  height: 100%;
+
+}
+
+.card:hover .content {
+  transform: rotateY(0.5turn);
+}
+
+.front,
+.back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2em;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  color: white;
+}
+
+.title {
+  transform: translateZ(5rem);
+  font-size: 1.4rem;
+  border-left: 2px solid red;
+  display: flex;
+  align-items: baseline;
+  justify-content: baseline;
+  padding: 0.4rem;
+}
+
+.subtitle {
+  transform: translateZ(2rem);
+}
+
+.back {
+  transform: rotateY(0.5turn);
+  /* background-color: #009bff; */
+}
+
+.description {
+  transform: translateZ(3rem);
+}
