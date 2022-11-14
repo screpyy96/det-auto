@@ -13,6 +13,7 @@ const NavWrapper = styled.nav`
   font-size: 20px;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
   font-weight: 600;
+  // z-index: 99;
 `;
 
 const LinkStyle = styled(Link)`
@@ -89,7 +90,50 @@ const LiStyle = styled.li`
   text-transform: uppercase;
 `;
 
+
+
+// DropDown
+
+const DropDown = styled.ul `
+visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: block;
+  z-index: 999;
+
+  &:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+`
+
+
+const MuieLi = styled.li`
+display: block;
+transition-duration: 0.5s;
+clear: both;
+width: 100%;
+
+&hover {
+  cursor: pointer;
+}
+`;
+const DropLink = styled(Link)` 
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+`
+
+
+
 export {
+  DropLink,
+  DropDown,
   NavWrapper,
   LinkStyle,
   NavigationMenu,
@@ -97,4 +141,5 @@ export {
   UlStyle,
   BurgerWrapper,
   LiStyle,
+  MuieLi
 };

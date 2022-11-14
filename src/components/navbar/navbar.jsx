@@ -7,6 +7,9 @@ import {
   UlStyle,
   BurgerWrapper,
   LiStyle,
+  DropDown,
+  DropLink,
+  MuieLi
 } from './navbar.style';
 
 const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
@@ -48,10 +51,18 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
               <LinkStyle to='/despre-noi'>Despre</LinkStyle>
             </LiStyle>
             <LiStyle>
-              <LinkStyle to='/galerie'>Galerie</LinkStyle>
+            <MuieLi>
+                  <LinkStyle to="servicii">Servicii</LinkStyle>
+                    <DropDown>
+                      <MuieLi> <DropLink to="/valorifica">Valorifica</DropLink></MuieLi>
+                      <MuieLi><DropLink to="/protejeaza">Protejeaza</DropLink></MuieLi>
+                      <MuieLi><DropLink to="/mentinere">Mentinere</DropLink></MuieLi>
+                      <MuieLi><DropLink to="/personalizare">Personalizare</DropLink></MuieLi>
+                    </DropDown>
+                </MuieLi>
             </LiStyle>
             <LiStyle>
-              <LinkStyle to='/pachete'>Pachete</LinkStyle>
+              <LinkStyle to='/galerie'>Galerie</LinkStyle>
             </LiStyle>
             <LiStyle>
               <LinkStyle to='/contact'>Contact</LinkStyle>
@@ -69,10 +80,26 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
                 <LinkStyle to='/despre-noi'>Despre</LinkStyle>
               </LiStyle>
               <LiStyle>
-                <LinkStyle to='/galerie'>Galerie</LinkStyle>
+                <MuieLi>
+                  <LinkStyle to="servicii">Servicii</LinkStyle>
+                    <DropDown>
+                        <MuieLi> 
+                          <DropLink to="/valorifica">Valorifica</DropLink>
+                          </MuieLi>
+                        <MuieLi>
+                          <DropLink to="/protejeaza">Protejeaza</DropLink>
+                          </MuieLi>
+                        <MuieLi>
+                          <DropLink to="/mentinere">Mentinere</DropLink>
+                          </MuieLi>
+                        <MuieLi>
+                          <DropLink to="/personalizare">Personalizare</DropLink>
+                         </MuieLi>
+                    </DropDown>
+                </MuieLi>
               </LiStyle>
               <LiStyle>
-                <LinkStyle to='/pachete'>Pachete</LinkStyle>
+                <LinkStyle to='/galerie'>Galerie</LinkStyle>
               </LiStyle>
               <LiStyle>
                 <LinkStyle to='/contact'>Contact</LinkStyle>
