@@ -1,0 +1,31 @@
+.container {
+  height: 50px;
+  width: 100%;
+  background-color: #3a3a3a;
+  display: block;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  padding: 11px 22px;
+  cursor: pointer;
+  visibility: visible;
+}
+
+.container:hover {
+background-color: #615f5f;
+}
+
+.link-whatsapp {
+  text-decoration: none;
+  font-size: 22px;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+display: none;
+
+  }
+}
