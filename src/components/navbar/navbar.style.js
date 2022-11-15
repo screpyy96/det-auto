@@ -40,6 +40,7 @@ const BrandName = styled.a`
 
 const NavigationMenu = styled.div`
   margin-left: auto;
+  z-index: 99;
 `;
 
 const BurgerWrapper = styled.div`
@@ -138,22 +139,6 @@ const DropLink = styled(Link)`
 // .dropdownn:hover .dropdownn-content {
 //   display: block;
 // }
-const DropDownContent = styled.div`
-display: none;
-position: absolute;
-z-index: 1;
-`;
-
-const DropDownStyle = styled.div`
-cursor: pointer;
-z-index: 1;
-
-
-&:hover ${DropDownContent} {
-  display: block;
-  background: white;
-}
-`;
 
 
 export {
@@ -167,6 +152,6 @@ export {
   BurgerWrapper,
   LiStyle,
   MuieLi,
-  DropDownStyle,
-  DropDownContent
+  // DropDownStyle,
+  // DropDownContent
 };

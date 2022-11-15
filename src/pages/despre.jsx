@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Carousele from '../components/carousel/carousel';
 
 const Despre = () => {
-  return <div>               <select name="dog-names" id="dog-names">
-  <option value="rigatoni">Rigatoni</option>
-  <option value="dave">Dave</option>
-  <option value="pumpernickel">Pumpernickel</option>
-  <option value="reeses">Reeses</option>
-</select></div>;
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  
+  return <div> 
+    <Carousele />
+  </div>;
 };
 
 export default Despre;

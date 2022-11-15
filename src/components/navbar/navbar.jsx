@@ -1,5 +1,4 @@
-import { Link } from '@reach/router';
-import React from 'react';
+import React, { useState } from 'react';
 import {
   NavWrapper,
   NavigationMenu,
@@ -7,15 +6,21 @@ import {
   UlStyle,
   BurgerWrapper,
   LiStyle,
-  DropDownStyle,
-  DropDownContent,
+  // DropDownStyle,
+  // DropDownContent,
   LinkStyle
 
 } from './navbar.style';
-
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
- 
+  const [accordion, setAccordion] = useState(false);
+
+
+
   const handleExpanded = () => {
     setIsNavExpanded(!isNavExpanded);
     console.log(isNavExpanded);
@@ -23,6 +28,9 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
 
   const closeSideBar = () => {
     setIsNavExpanded(false);
+  };
+  const handleAccordion = () => {
+    setAccordion(!accordion);
   };
 
   return (
@@ -46,61 +54,49 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
         </svg>
       </BurgerWrapper>
       
-        {isNavExpanded ? (
-        <NavigationMenu onClick={closeSideBar}>
-          <UlStyle isNavExpanded={isNavExpanded}>
-          <LiStyle >
+ 
+        <NavigationMenu >
+          <UlStyle isNavExpanded={isNavExpanded} >
+          <LiStyle onClick={closeSideBar} >
             <LinkStyle to="/">Acasa</LinkStyle>
           </LiStyle>
           <LiStyle >
-          <LinkStyle to="/despre">Despre</LinkStyle>
+            <LinkStyle onClick={closeSideBar} to="/despre">Despre</LinkStyle>
           </LiStyle>
-              <DropDownStyle>
-                <LiStyle>Servicii</LiStyle>
-                <DropDownContent>
+            <LiStyle>
+              <Accordion style={{}}expanded={accordion} onClick={() => handleAccordion()}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                   <LiStyle>Servicii</LiStyle>
+                  </AccordionSummary  >
+                  <AccordionDetails >
+                <LiStyle >
+              <LinkStyle onClick={closeSideBar} to="/valorifica">valorifica</LinkStyle>
+            </LiStyle>
                 <LiStyle>
-                  <LinkStyle to="/">Acasa</LinkStyle>
-                </LiStyle>
-              <LiStyle>
-                <LinkStyle to="/despre">Despre</LinkStyle>
-              </LiStyle>
-                </DropDownContent>
-              </DropDownStyle>
-          <LiStyle>
-            <LinkStyle to="/galerie">galerie</LinkStyle>
-          </LiStyle>
-          <LiStyle>
-            <LinkStyle to="/contact">Contact</LinkStyle>
-          </LiStyle>
-            </UlStyle>
-          </NavigationMenu>):(<>
-            <NavigationMenu onClick={closeSideBar} >
-          <UlStyle  >
-          <LiStyle >
-            <LinkStyle to="/">Acasa</LinkStyle>
-          </LiStyle>
-          <LiStyle >
-          <LinkStyle to="/despre">Despre</LinkStyle>
-          </LiStyle>
-              <DropDownStyle>
-                <LiStyle>Servicii</LiStyle>
-                <DropDownContent>
+              <LinkStyle onClick={closeSideBar} to="/protejare">protejare</LinkStyle>
+            </LiStyle>
                 <LiStyle>
-                  <LinkStyle to="/">Acasa</LinkStyle>
-                </LiStyle>
-              <LiStyle>
-                <LinkStyle to="/despre">Despre</LinkStyle>
-              </LiStyle>
-                </DropDownContent>
-              </DropDownStyle>
-          <LiStyle>
-            <LinkStyle to="/galerie">galerie</LinkStyle>
+              <LinkStyle onClick={closeSideBar} to="/mentinere">mentinere</LinkStyle>
+            </LiStyle>
+                <LiStyle>
+              <LinkStyle onClick={closeSideBar} to="/valorifica">valorifica</LinkStyle>
+            </LiStyle>
+
+                  </AccordionDetails>
+          </Accordion>
           </LiStyle>
-          <LiStyle>
-            <LinkStyle to="/contact">Contact</LinkStyle>
-          </LiStyle>
-            </UlStyle>
-          </NavigationMenu></>)}
+                <LiStyle>
+              <LinkStyle onClick={closeSideBar} to="/galerie">galerie</LinkStyle>
+            </LiStyle>
+            <LiStyle>
+              <LinkStyle onClick={closeSideBar} to="/contact">Contact</LinkStyle>
+            </LiStyle>
+              </UlStyle>
+            </NavigationMenu>
         
       
     </NavWrapper>
