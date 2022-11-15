@@ -35,6 +35,7 @@ const StyledBtn = styled.button`
     float: right;
     letter-spacing: 2px;
     margin-top: 2rem;
+    width: 71%;
     &:hover { 
         background: red;
         color: white;
@@ -62,7 +63,7 @@ const StyledBtnFaqs = styled.button`
 
 const FaqsWrapper = styled.div`
     background-image: url(${({ image  }) => (image ? image : "")});
-    height: 60vh;
+    height: 71vh;
     background-size: cover;
     color: white;
     display: flex;
