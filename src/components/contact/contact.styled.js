@@ -7,11 +7,11 @@ export const ContactWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 60vh;
   /* background-color: #f5f5f5; */
   padding: 0px;
   margin: 0px;
-  min-height: 89vh;
+  /* min-height: 89vh; */
 `;
 
 export const SendBtn = styled.div`

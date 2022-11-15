@@ -6,14 +6,12 @@ import {
   UlStyle,
   BurgerWrapper,
   LiStyle,
-  // DropDownStyle,
-  // DropDownContent,
-  LinkStyle
+  LinkStyle,
+  AccordionWrapper,
+  AccordionTitle,
+  DetailsAccordion
 
 } from './navbar.style';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
@@ -64,15 +62,15 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
             <LinkStyle onClick={closeSideBar} to="/despre">Despre</LinkStyle>
           </LiStyle>
             <LiStyle>
-              <Accordion style={{}}expanded={accordion} onClick={() => handleAccordion()}>
-                  <AccordionSummary
+              <AccordionWrapper expanded={accordion} onClick={() => handleAccordion()}>
+                  <AccordionTitle
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                   >
-                   <LiStyle>Servicii</LiStyle>
-                  </AccordionSummary  >
-                  <AccordionDetails >
+                   <>Servicii</>
+                  </AccordionTitle  >
+                  <DetailsAccordion >
                 <LiStyle >
               <LinkStyle onClick={closeSideBar} to="/valorifica">valorifica</LinkStyle>
             </LiStyle>
@@ -83,11 +81,11 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
               <LinkStyle onClick={closeSideBar} to="/mentinere">mentinere</LinkStyle>
             </LiStyle>
                 <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/valorifica">valorifica</LinkStyle>
+              <LinkStyle onClick={closeSideBar} to="/personalizeaza">personalizeaza</LinkStyle>
             </LiStyle>
 
-                  </AccordionDetails>
-          </Accordion>
+                  </DetailsAccordion>
+          </AccordionWrapper>
           </LiStyle>
                 <LiStyle>
               <LinkStyle onClick={closeSideBar} to="/galerie">galerie</LinkStyle>

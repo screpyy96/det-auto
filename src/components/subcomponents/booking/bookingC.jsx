@@ -3,7 +3,7 @@ import Contact from '../../contact/contact'
 
 export const BookingC = () => {
   return (
-    <div>
+    <div >
       <Contact/>
     </div>
   )

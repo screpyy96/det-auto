@@ -1,5 +1,42 @@
 import styled from 'styled-components';
 import { Link } from '@reach/router';
+import { Accordion } from '@mui/material/';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+
+
+const AccordionWrapper = styled(Accordion)`
+&&{
+  /* background: transparent; */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-height:initial;
+  margin-top: -12px;
+
+}
+`;
+const AccordionTitle = styled(AccordionSummary)`
+&&{
+  /* background: transparent; */
+  border: none;
+  min-height:initial;
+  box-shadow: none;
+  background:  transparent;
+  padding: 0;
+  /* margin-top: -12px; */
+
+}
+`;
+const DetailsAccordion = styled(AccordionDetails)`
+&&{
+  /* background: transparent; */
+  border: none;
+  min-height:initial;
+  padding: 0;
+
+}
+`;
 
 const NavWrapper = styled.nav`
   height: 80px;
@@ -152,6 +189,7 @@ export {
   BurgerWrapper,
   LiStyle,
   MuieLi,
-  // DropDownStyle,
-  // DropDownContent
+  AccordionWrapper,
+  AccordionTitle,
+  DetailsAccordion
 };

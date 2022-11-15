@@ -4,16 +4,16 @@ const WrapperSubcomponents = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-    height: 500px;
+    
     margin: auto;
-    // grid-gap: 1rem;
+  
 `;
 
 const AboutCWrapper = styled.div`
     background: #F9F9F9;
     height: 100%;
     display: flex;
-
+    
 `;
 
 const MainContent = styled.div`
@@ -21,7 +21,8 @@ const MainContent = styled.div`
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
+    
 `;
 
 
@@ -59,7 +60,7 @@ const StyledBtnFaqs = styled.button`
 
 const FaqsWrapper = styled.div`
     background-image: url(${({ image  }) => (image ? image : "")});
-    height: 100%;
+    height: 60vh;
     background-size: cover;
     color: white;
     display: grid;
