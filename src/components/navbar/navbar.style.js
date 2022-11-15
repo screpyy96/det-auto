@@ -78,7 +78,7 @@ display: flex;
     background-color: white;
     border-top: 1px solid black; 
     z-index: 2; 
-    display: ${({ setIsNavExpanded }) => (setIsNavExpanded ? 'block' : 'none')};
+    display: ${({ isNavExpanded }) => (isNavExpanded ? 'block' : 'none')};
   `;
 
 const LiStyle = styled.li`
@@ -139,17 +139,12 @@ const DropLink = styled(Link)`
 //   display: block;
 // }
 const DropDownContent = styled.div`
-
 display: none;
 position: absolute;
 z-index: 1;
 `;
 
 const DropDownStyle = styled.div`
-backdrop-filter: blur(10px);
-
-
-
 cursor: pointer;
 z-index: 1;
 

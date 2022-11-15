@@ -27,7 +27,7 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
 
   return (
     <NavWrapper>
-      <BrandName href='/' className='brand-name'>
+      <BrandName>
         Detailing Auto D&S
       </BrandName>
       <BurgerWrapper onClick={() => handleExpanded()}>
@@ -46,8 +46,9 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
         </svg>
       </BurgerWrapper>
       
-        {isNavExpanded ? (<NavigationMenu>
-          <UlStyle >
+        {isNavExpanded ? (
+        <NavigationMenu onClick={closeSideBar}>
+          <UlStyle isNavExpanded={isNavExpanded}>
           <LiStyle >
             <LinkStyle to="/">Acasa</LinkStyle>
           </LiStyle>
@@ -73,8 +74,8 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
           </LiStyle>
             </UlStyle>
           </NavigationMenu>):(<>
-            <NavigationMenu >
-          <UlStyle onClick={closeSideBar} setIsNavExpanded={setIsNavExpanded}>
+            <NavigationMenu onClick={closeSideBar} >
+          <UlStyle  >
           <LiStyle >
             <LinkStyle to="/">Acasa</LinkStyle>
           </LiStyle>
