@@ -13,8 +13,8 @@ justify-items: center;
 .card {
   width: 12rem;
   cursor: pointer;
-  width: 250px;
-  height: 300px;
+  width: 300px;
+  height: 400px;
 }
 @media screen and (max-width: 768px) {
 .card-wrapper {
@@ -30,19 +30,6 @@ justify-items: center;
 }
 }
 
-.content {
-  text-align: center;
-  position: relative;
-  transition: all 2.25s;
-  background-image: url("../../data/images/valorificare.jpg");
-  background-size: cover;
-  background-position: center;
-  padding: 5em;
-  transform-style: preserve-3d;
-  height: 100%;
-
-}
-
 .card:hover .content {
   transform: rotateY(0.5turn);
 }
@@ -52,7 +39,7 @@ justify-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 2em;
+  padding: 1em;
   transform-style: preserve-3d;
   backface-visibility: hidden;
   color: white;

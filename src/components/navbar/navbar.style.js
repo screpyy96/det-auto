@@ -13,6 +13,7 @@ const NavWrapper = styled.nav`
   font-size: 20px;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
   font-weight: 600;
+  // z-index: 99;
 `;
 
 const LinkStyle = styled(Link)`
@@ -24,7 +25,7 @@ const LinkStyle = styled(Link)`
   width: 100%;
 
   &:hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black; 
     color: red;
   }
 `;
@@ -77,7 +78,7 @@ display: flex;
     background-color: white;
     border-top: 1px solid black; 
     z-index: 2; 
-    display: ${({ setIsNavExpanded }) => (setIsNavExpanded ? 'block' : 'none')};
+    display: ${({ isNavExpanded }) => (isNavExpanded ? 'block' : 'none')};
   `;
 
 const LiStyle = styled.li`
@@ -89,7 +90,75 @@ const LiStyle = styled.li`
   text-transform: uppercase;
 `;
 
+
+
+// DropDown
+
+const DropDown = styled.ul `
+visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+  z-index: 999;
+
+  &:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+  }
+`
+
+
+const MuieLi = styled.li`
+display: block;
+transition-duration: 0.5s;
+clear: both;
+width: 100%;
+
+&:hover {
+  cursor: pointer;
+}
+`;
+const DropLink = styled(Link)` 
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+`
+// .dropdownn-content {
+//   display: none;
+//   position: absolute;
+//   z-index: 1;
+// }
+
+
+// .dropdownn:hover .dropdownn-content {
+//   display: block;
+// }
+const DropDownContent = styled.div`
+display: none;
+position: absolute;
+z-index: 1;
+`;
+
+const DropDownStyle = styled.div`
+cursor: pointer;
+z-index: 1;
+
+
+&:hover ${DropDownContent} {
+  display: block;
+  background: white;
+}
+`;
+
+
 export {
+  DropLink,
+  DropDown,
   NavWrapper,
   LinkStyle,
   NavigationMenu,
@@ -97,4 +166,7 @@ export {
   UlStyle,
   BurgerWrapper,
   LiStyle,
+  MuieLi,
+  DropDownStyle,
+  DropDownContent
 };

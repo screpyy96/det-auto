@@ -1,15 +1,21 @@
+import { Link } from '@reach/router';
 import React from 'react';
 import {
-  LinkStyle,
   NavWrapper,
   NavigationMenu,
   BrandName,
   UlStyle,
   BurgerWrapper,
   LiStyle,
+  DropDownStyle,
+  DropDownContent,
+  LinkStyle
+
 } from './navbar.style';
 
+
 const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
+ 
   const handleExpanded = () => {
     setIsNavExpanded(!isNavExpanded);
     console.log(isNavExpanded);
@@ -18,9 +24,10 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
   const closeSideBar = () => {
     setIsNavExpanded(false);
   };
+
   return (
     <NavWrapper>
-      <BrandName href='/' className='brand-name'>
+      <BrandName>
         Detailing Auto D&S
       </BrandName>
       <BurgerWrapper onClick={() => handleExpanded()}>
@@ -38,49 +45,64 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
           />
         </svg>
       </BurgerWrapper>
-      {isNavExpanded ? (
+      
+        {isNavExpanded ? (
         <NavigationMenu onClick={closeSideBar}>
-          <UlStyle setIsNavExpanded={setIsNavExpanded}>
-            <LiStyle>
-              <LinkStyle to='/'>Home</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/despre-noi'>Despre</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/galerie'>Galerie</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/pachete'>Pachete</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/contact'>Contact</LinkStyle>
-            </LiStyle>
-          </UlStyle>
-        </NavigationMenu>
-      ) : (
-        <>
-          <NavigationMenu onClick={closeSideBar}>
-            <UlStyle>
+          <UlStyle isNavExpanded={isNavExpanded}>
+          <LiStyle >
+            <LinkStyle to="/">Acasa</LinkStyle>
+          </LiStyle>
+          <LiStyle >
+          <LinkStyle to="/despre">Despre</LinkStyle>
+          </LiStyle>
+              <DropDownStyle>
+                <LiStyle>Servicii</LiStyle>
+                <DropDownContent>
+                <LiStyle>
+                  <LinkStyle to="/">Acasa</LinkStyle>
+                </LiStyle>
               <LiStyle>
-                <LinkStyle to='/'>Home</LinkStyle>
+                <LinkStyle to="/despre">Despre</LinkStyle>
               </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/despre-noi'>Despre</LinkStyle>
-              </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/galerie'>Galerie</LinkStyle>
-              </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/pachete'>Pachete</LinkStyle>
-              </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/contact'>Contact</LinkStyle>
-              </LiStyle>
+                </DropDownContent>
+              </DropDownStyle>
+          <LiStyle>
+            <LinkStyle to="/galerie">galerie</LinkStyle>
+          </LiStyle>
+          <LiStyle>
+            <LinkStyle to="/contact">Contact</LinkStyle>
+          </LiStyle>
             </UlStyle>
-          </NavigationMenu>
-        </>
-      )}
+          </NavigationMenu>):(<>
+            <NavigationMenu onClick={closeSideBar} >
+          <UlStyle  >
+          <LiStyle >
+            <LinkStyle to="/">Acasa</LinkStyle>
+          </LiStyle>
+          <LiStyle >
+          <LinkStyle to="/despre">Despre</LinkStyle>
+          </LiStyle>
+              <DropDownStyle>
+                <LiStyle>Servicii</LiStyle>
+                <DropDownContent>
+                <LiStyle>
+                  <LinkStyle to="/">Acasa</LinkStyle>
+                </LiStyle>
+              <LiStyle>
+                <LinkStyle to="/despre">Despre</LinkStyle>
+              </LiStyle>
+                </DropDownContent>
+              </DropDownStyle>
+          <LiStyle>
+            <LinkStyle to="/galerie">galerie</LinkStyle>
+          </LiStyle>
+          <LiStyle>
+            <LinkStyle to="/contact">Contact</LinkStyle>
+          </LiStyle>
+            </UlStyle>
+          </NavigationMenu></>)}
+        
+      
     </NavWrapper>
   );
 };

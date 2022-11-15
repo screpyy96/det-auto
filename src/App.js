@@ -22,8 +22,8 @@ function App() {
       <Router>
         <Home path='/' />
         <Despre path='despre-noi' />
+        <Pachete path='servicii' />
         <Galerie path='galerie' />
-        <Pachete path='pachete' />
         <Contact path='contact' />
       </Router>
     </div>
