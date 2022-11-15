@@ -2,7 +2,6 @@ import React from 'react';
 import './card.css';
 import { cards } from '../../data/db';
 import { StyledImg } from './card.styled';
-
 export const Cards = () => {
   return (
     <div className='card-wrapper'>

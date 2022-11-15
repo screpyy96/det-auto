@@ -9,7 +9,7 @@ import poza3 from '../../data/images/poza1.jpg';
 const poze = [poza1, poza2, poza3];
 const Carousele = () => {
   return (
-    <div className='filter'>
+    <div className='filter height' >
       <Carousel
         showThumbs={false}
         showStatus={false}
@@ -20,7 +20,7 @@ const Carousele = () => {
         {poze.map((p) => {
           return (
             <div>
-              <img src={p} alt='p' style={{ height: '69vh' }} />
+              <img src={p} alt='p' style={{height: '63vh'}} />
             </div>
           );
         })}

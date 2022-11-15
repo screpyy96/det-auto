@@ -10,6 +10,7 @@ import Home from './pages/home';
 import Pachete from './pages/pachete';
 
 function App() {
+
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
@@ -21,10 +22,10 @@ function App() {
       />
       <Router>
         <Home path='/' />
-        <Despre path='despre-noi' />
-        <Pachete path='servicii' />
-        <Galerie path='galerie' />
-        <Contact path='contact' />
+        <Despre path='/despre' />
+        <Pachete path='/servicii' />
+        <Galerie path='/galerie' />
+        <Contact path='/contact' />
       </Router>
     </div>
   );

@@ -75,7 +75,7 @@
       left: 0;
       flex-direction: column;
       width: 100%;
-      height: calc(100vh - 77px);
+      height: 100vh;
       background-color: white;
       border-top: 1px solid black;
     }

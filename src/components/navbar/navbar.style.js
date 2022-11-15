@@ -1,5 +1,42 @@
 import styled from 'styled-components';
 import { Link } from '@reach/router';
+import { Accordion } from '@mui/material/';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+
+
+const AccordionWrapper = styled(Accordion)`
+&&{
+  /* background: transparent; */
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  min-height:initial;
+  margin-top: -12px;
+
+}
+`;
+const AccordionTitle = styled(AccordionSummary)`
+&&{
+  /* background: transparent; */
+  border: none;
+  min-height:initial;
+  box-shadow: none;
+  background:  transparent;
+  padding: 0;
+  /* margin-top: -12px; */
+
+}
+`;
+const DetailsAccordion = styled(AccordionDetails)`
+&&{
+  /* background: transparent; */
+  border: none;
+  min-height:initial;
+  padding: 0;
+
+}
+`;
 
 const NavWrapper = styled.nav`
   height: 80px;
@@ -40,6 +77,7 @@ const BrandName = styled.a`
 
 const NavigationMenu = styled.div`
   margin-left: auto;
+  z-index: 99;
 `;
 
 const BurgerWrapper = styled.div`
@@ -138,22 +176,6 @@ const DropLink = styled(Link)`
 // .dropdownn:hover .dropdownn-content {
 //   display: block;
 // }
-const DropDownContent = styled.div`
-display: none;
-position: absolute;
-z-index: 1;
-`;
-
-const DropDownStyle = styled.div`
-cursor: pointer;
-z-index: 1;
-
-
-&:hover ${DropDownContent} {
-  display: block;
-  background: white;
-}
-`;
 
 
 export {
@@ -167,6 +189,7 @@ export {
   BurgerWrapper,
   LiStyle,
   MuieLi,
-  DropDownStyle,
-  DropDownContent
+  AccordionWrapper,
+  AccordionTitle,
+  DetailsAccordion
 };
