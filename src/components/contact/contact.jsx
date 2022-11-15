@@ -5,16 +5,15 @@ import * as Yup from 'yup';
 import {
   ContactWrapper,
   SendBtn,
-  // ErrorStyle,
-  // SendBtn,
+
   StyledBox,
-  // StyledField,
-  BtnMui,
+
 } from './contact.styled';
 import { Form, Formik } from 'formik';
 import { Typography } from '@material-ui/core';
 // import { Button } from '@mui/material';
 import { TextField } from '@mui/material';
+import { StyledBtn } from '../subcomponents/subcomponents.styled';
 
 const ContactForm = () => {
   const [from_name, setFrom_name] = useState('');
@@ -61,8 +60,8 @@ const ContactForm = () => {
 
   return (
     <ContactWrapper>
-      <Typography variant='h4' component='h2'>
-        Contact Us
+      <Typography >
+        CONTACT
       </Typography>
       <StyledBox>
         <Formik
@@ -142,14 +141,14 @@ const ContactForm = () => {
                 rows={4}
               />
               <SendBtn>
-                <BtnMui
+
+                <StyledBtn 
                   type='submit'
                   disabled={isSubmitting}
                   variant='contained'
-                  size='large'
-                >
-                  Send
-                </BtnMui>
+                  size='large'>
+                    Trimite
+                </StyledBtn>
               </SendBtn>
             </Form>
           )}

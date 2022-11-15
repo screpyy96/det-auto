@@ -28,13 +28,13 @@ export const cards = [
 
 export const subcomponents = [
     {
-        "title":"About",
+        "title":"DESPRE",
         "mainText":" Detailing Auto Suceava ste cel mai exclusivist specialist în folii de protecție a vopselei și a detaliilor din lume, care se ocupă de cel mai mare volum de supermașini din întreaga judet. Facilitățile noastre de ultimă generație găzduiesc unii dintre cei mai calificați detalieri și instalatori de folie de protecție a vopselei din tara. Acest mediu, împreună cu expertiza noastră, ne permite să oferim clienților noștri cea mai înaltă calitate posibilă.",
         "subText": "Noi va oferim un pachet total de soluții de îngrijire a mașinii, care încorporează totul, de la îmbunătățire și protecție până la întreținere",
         "button": "Vezi mai multe"
     },
     {
-        "title": "FAQs",
+        "title": "INTREBARI & RASPUNSURI",
         "mainText": "Ai intrebari despre produsele noastre?",
         "subText": "Poti afla totul despre noi in sectiunea de mai jos",
         "button": "Vezi intrebarile",

@@ -1,19 +1,21 @@
 import { Typography } from '@mui/material'
 import React from 'react'
-import { FaqsWrapper, MainContent, StyledBtnFaqs } from '../subcomponents.styled'
+import { ContentWrapper, FaqsWrapper, StyledBtnFaqs, StyledText } from '../subcomponents.styled'
 
 export const FaqsC = ({faqs}) => {
 
   return (
     <FaqsWrapper image={faqs.frontImg}>
-      <MainContent>
-        <div  >
+     
+        <ContentWrapper  >
           <Typography>{faqs.title}</Typography>
-          <p>{faqs.mainText}</p>
-          <p>{faqs.subText}</p>
+          <StyledText>
+            <p>{faqs.mainText}</p>
+            <p>{faqs.subText}</p>
+          </StyledText>
           <StyledBtnFaqs>{faqs.button}</StyledBtnFaqs>
-        </div>
-      </MainContent>
+        </ContentWrapper>
+    
       </FaqsWrapper>
   )
 }

@@ -17,7 +17,7 @@ export const ContactWrapper = styled.div`
 export const SendBtn = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+ 
 `;
 
 export const ErrorStyle = styled.div`
@@ -35,14 +35,15 @@ export const StyledBox = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  /* background-color: #f5f5f5; */
+  height: 86%;
+
   padding: 10px;
   margin: 0px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     height: 100%;
   }
+  
 `;
 
 // export const SendBtn = styled.input`
