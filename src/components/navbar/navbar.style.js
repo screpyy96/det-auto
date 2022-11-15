@@ -25,7 +25,7 @@ const LinkStyle = styled(Link)`
   width: 100%;
 
   &:hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid black; 
     color: red;
   }
 `;
@@ -101,7 +101,7 @@ visibility: hidden;
   transition: all 0.5s ease;
   margin-top: 1rem;
   left: 0;
-  display: block;
+  display: none;
   z-index: 999;
 
   &:hover {
@@ -118,7 +118,7 @@ transition-duration: 0.5s;
 clear: both;
 width: 100%;
 
-&hover {
+&:hover {
   cursor: pointer;
 }
 `;
@@ -128,7 +128,37 @@ const DropLink = styled(Link)`
   text-decoration: none;
   display: block;
 `
+// .dropdownn-content {
+//   display: none;
+//   position: absolute;
+//   z-index: 1;
+// }
 
+
+// .dropdownn:hover .dropdownn-content {
+//   display: block;
+// }
+const DropDownContent = styled.div`
+
+display: none;
+position: absolute;
+z-index: 1;
+`;
+
+const DropDownStyle = styled.div`
+backdrop-filter: blur(10px);
+
+
+
+cursor: pointer;
+z-index: 1;
+
+
+&:hover ${DropDownContent} {
+  display: block;
+  background: white;
+}
+`;
 
 
 export {
@@ -141,5 +171,7 @@ export {
   UlStyle,
   BurgerWrapper,
   LiStyle,
-  MuieLi
+  MuieLi,
+  DropDownStyle,
+  DropDownContent
 };

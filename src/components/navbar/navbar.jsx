@@ -1,18 +1,21 @@
+import { Link } from '@reach/router';
 import React from 'react';
 import {
-  LinkStyle,
   NavWrapper,
   NavigationMenu,
   BrandName,
   UlStyle,
   BurgerWrapper,
   LiStyle,
-  DropDown,
-  DropLink,
-  MuieLi
+  DropDownStyle,
+  DropDownContent,
+  LinkStyle
+
 } from './navbar.style';
 
+
 const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
+ 
   const handleExpanded = () => {
     setIsNavExpanded(!isNavExpanded);
     console.log(isNavExpanded);
@@ -21,6 +24,7 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
   const closeSideBar = () => {
     setIsNavExpanded(false);
   };
+
   return (
     <NavWrapper>
       <BrandName href='/' className='brand-name'>
@@ -41,73 +45,63 @@ const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
           />
         </svg>
       </BurgerWrapper>
-      {isNavExpanded ? (
-        <NavigationMenu onClick={closeSideBar}>
-          <UlStyle setIsNavExpanded={setIsNavExpanded}>
-            <LiStyle>
-              <LinkStyle to='/'>Home</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/despre-noi'>Despre</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-            <MuieLi>
-                  <LinkStyle to="servicii">Servicii</LinkStyle>
-                    <DropDown>
-                      <MuieLi> <DropLink to="/valorifica">Valorifica</DropLink></MuieLi>
-                      <MuieLi><DropLink to="/protejeaza">Protejeaza</DropLink></MuieLi>
-                      <MuieLi><DropLink to="/mentinere">Mentinere</DropLink></MuieLi>
-                      <MuieLi><DropLink to="/personalizare">Personalizare</DropLink></MuieLi>
-                    </DropDown>
-                </MuieLi>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/galerie'>Galerie</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle to='/contact'>Contact</LinkStyle>
-            </LiStyle>
-          </UlStyle>
-        </NavigationMenu>
-      ) : (
-        <>
-          <NavigationMenu onClick={closeSideBar}>
-            <UlStyle>
+      
+        {isNavExpanded ? (<NavigationMenu>
+          <UlStyle >
+          <LiStyle >
+            <LinkStyle to="/">Acasa</LinkStyle>
+          </LiStyle>
+          <LiStyle >
+          <LinkStyle to="/despre">Despre</LinkStyle>
+          </LiStyle>
+              <DropDownStyle>
+                <LiStyle>Servicii</LiStyle>
+                <DropDownContent>
+                <LiStyle>
+                  <LinkStyle to="/">Acasa</LinkStyle>
+                </LiStyle>
               <LiStyle>
-                <LinkStyle to='/'>Home</LinkStyle>
+                <LinkStyle to="/despre">Despre</LinkStyle>
               </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/despre-noi'>Despre</LinkStyle>
-              </LiStyle>
-              <LiStyle>
-                <MuieLi>
-                  <LinkStyle to="servicii">Servicii</LinkStyle>
-                    <DropDown>
-                        <MuieLi> 
-                          <DropLink to="/valorifica">Valorifica</DropLink>
-                          </MuieLi>
-                        <MuieLi>
-                          <DropLink to="/protejeaza">Protejeaza</DropLink>
-                          </MuieLi>
-                        <MuieLi>
-                          <DropLink to="/mentinere">Mentinere</DropLink>
-                          </MuieLi>
-                        <MuieLi>
-                          <DropLink to="/personalizare">Personalizare</DropLink>
-                         </MuieLi>
-                    </DropDown>
-                </MuieLi>
-              </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/galerie'>Galerie</LinkStyle>
-              </LiStyle>
-              <LiStyle>
-                <LinkStyle to='/contact'>Contact</LinkStyle>
-              </LiStyle>
+                </DropDownContent>
+              </DropDownStyle>
+          <LiStyle>
+            <LinkStyle to="/galerie">galerie</LinkStyle>
+          </LiStyle>
+          <LiStyle>
+            <LinkStyle to="/contact">Contact</LinkStyle>
+          </LiStyle>
             </UlStyle>
-          </NavigationMenu>
-        </>
-      )}
+          </NavigationMenu>):(<>
+            <NavigationMenu >
+          <UlStyle onClick={closeSideBar} setIsNavExpanded={setIsNavExpanded}>
+          <LiStyle >
+            <LinkStyle to="/">Acasa</LinkStyle>
+          </LiStyle>
+          <LiStyle >
+          <LinkStyle to="/despre">Despre</LinkStyle>
+          </LiStyle>
+              <DropDownStyle>
+                <LiStyle>Servicii</LiStyle>
+                <DropDownContent>
+                <LiStyle>
+                  <LinkStyle to="/">Acasa</LinkStyle>
+                </LiStyle>
+              <LiStyle>
+                <LinkStyle to="/despre">Despre</LinkStyle>
+              </LiStyle>
+                </DropDownContent>
+              </DropDownStyle>
+          <LiStyle>
+            <LinkStyle to="/galerie">galerie</LinkStyle>
+          </LiStyle>
+          <LiStyle>
+            <LinkStyle to="/contact">Contact</LinkStyle>
+          </LiStyle>
+            </UlStyle>
+          </NavigationMenu></>)}
+        
+      
     </NavWrapper>
   );
 };
