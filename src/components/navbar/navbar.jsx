@@ -1,103 +1,127 @@
-import React, { useState } from 'react';
 import {
-  NavWrapper,
-  NavigationMenu,
-  BrandName,
-  UlStyle,
-  BurgerWrapper,
-  LiStyle,
-  LinkStyle,
-  AccordionWrapper,
-  AccordionTitle,
-  DetailsAccordion
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  Typography,
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Button,
 
-} from './navbar.style';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+} from "@material-ui/core";
+import {Menu, MenuItem} from '@mui/material'
+import { Stack } from "@mui/system";
+import { Link } from "@reach/router";
+import { useState } from "react";
 
-const Navbar = ({ isNavExpanded, setIsNavExpanded }) => {
-  const [accordion, setAccordion] = useState(false);
+import DrawerComponent from "./drawer";
 
+const useStyles = makeStyles((theme) => ({
+  navlinks: {
+    marginLeft: theme.spacing(1),
+    display: "flex",
+    
+   
+  },
+  logo: {
+    flexGrow: "1",
+    cursor: "pointer",
+    color: "black",
+  },
+  navbar: {
+    background: 'white',
+  },
+  link: {
+    textDecoration: "none",
+    fontSize: "20px",
+    color: "black",
+    marginLeft: theme.spacing(3),
+    "&:hover": {
+      borderBottom: "1px solid black",
+    },
+  },
+}));
 
+const Navbar = () => {
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+  const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const handleExpanded = () => {
-    setIsNavExpanded(!isNavExpanded);
-    console.log(isNavExpanded);
-  };
+  const handleClick = (e) => {
+    setAnchorEl(e.currentTarget)
+  }
 
-  const closeSideBar = () => {
-    setIsNavExpanded(false);
-  };
-  const handleAccordion = () => {
-    setAccordion(!accordion);
-  };
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
 
   return (
-    <NavWrapper>
-      <BrandName>
-        Detailing Auto D&S
-      </BrandName>
-      <BurgerWrapper onClick={() => handleExpanded()}>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          fill='none'
-          viewBox='0 0 24 24'
-          stroke-width='1.5'
-          stroke='currentColor'
-        >
-          <path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5'
-          />
-        </svg>
-      </BurgerWrapper>
-      
- 
-        <NavigationMenu >
-          <UlStyle isNavExpanded={isNavExpanded} >
-          <LiStyle onClick={closeSideBar} >
-            <LinkStyle to="/">Acasa</LinkStyle>
-          </LiStyle>
-          <LiStyle >
-            <LinkStyle onClick={closeSideBar} to="/despre">Despre</LinkStyle>
-          </LiStyle>
-            <LiStyle>
-              <AccordionWrapper expanded={accordion} onClick={() => handleAccordion()}>
-                  <AccordionTitle
-                    expandIcon={<ExpandMoreIcon />}
-                    aria-controls="panel1a-content"
-                    id="panel1a-header"
-                  >
-                   <>Servicii</>
-                  </AccordionTitle  >
-                  <DetailsAccordion >
-                <LiStyle >
-              <LinkStyle onClick={closeSideBar} to="/valorifica">valorifica</LinkStyle>
-            </LiStyle>
-                <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/protejare">protejare</LinkStyle>
-            </LiStyle>
-                <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/mentinere">mentinere</LinkStyle>
-            </LiStyle>
-                <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/personalizeaza">personalizeaza</LinkStyle>
-            </LiStyle>
-
-                  </DetailsAccordion>
-          </AccordionWrapper>
-          </LiStyle>
-                <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/galerie">galerie</LinkStyle>
-            </LiStyle>
-            <LiStyle>
-              <LinkStyle onClick={closeSideBar} to="/contact">Contact</LinkStyle>
-            </LiStyle>
-              </UlStyle>
-            </NavigationMenu>
-        
-      
-    </NavWrapper>
+    <AppBar position="static" className={classes.navbar}>
+      <CssBaseline />
+      <Toolbar>
+        <Typography variant="h4" className={classes.logo}>
+          Detailing Auto Suceava
+          
+        </Typography>
+        {isMobile ? (
+          <DrawerComponent />
+        ) : (
+          <div className={classes.navlinks}>
+            <Button>
+              <Link to="/" className={classes.link}>
+                Acasa
+              </Link>
+            </Button>
+            <Button>
+              <Link to="/despre" className={classes.link}>
+                Despre
+              </Link>
+            </Button>
+            <Button to="/"  className={classes.link} id="resources-button" onClick={handleClick} aria-controls={open ? 'resources-menu':undefined}
+              aria-haspopup={true}
+              aria-expanded={open ? "true" : undefined}
+            >Servicii</Button>
+            <Link to="/galerie" className={classes.link}>
+              Galerie
+            </Link>
+            <Link to="/contact" className={classes.link}>
+              Contact
+            </Link>
+            <Stack>
+              <Menu id="resources-menu" open={open}
+                MenuListProps={{
+                  'aria-labelledby': "resources-button"
+                }}
+                onClick={handleClose}
+              >
+                <MenuItem>
+                <Link onClick={handleClose}to="/valorificare" className={classes.link}>
+                 Valorificare
+                </Link>
+                  </MenuItem>
+                  <MenuItem>
+                  <Link onClick={handleClose}to="/protejare" className={classes.link}>
+                  protejare
+                </Link>
+                </MenuItem>
+                <MenuItem>
+                <Link onClick={handleClose}to="/mentinere" className={classes.link}>
+                 mentinere
+                </Link>
+                  </MenuItem>
+                <MenuItem>
+                <Link onClick={handleClose}to="/personalizare" className={classes.link}>
+                 personalizare
+                </Link>
+                  </MenuItem>
+              </Menu>
+            </Stack>
+          </div>
+        )}
+      </Toolbar>
+    </AppBar>
   );
 };
 
