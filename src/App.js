@@ -1,6 +1,7 @@
 import { Router } from '@reach/router';
 import { useState } from 'react';
 import './App.css';
+import Valorificare from './components/levels-components/valorificare/valorificare';
 import Navbar from './components/navbar/navbar';
 import { Whatsap } from './components/whatsap/whatsap';
 import Contact from './pages/contact';
@@ -26,6 +27,7 @@ function App() {
         <Pachete path='/servicii' />
         <Galerie path='/galerie' />
         <Contact path='/contact' />
+        <Valorificare path='/valorificare'/>
       </Router>
     </div>
   );

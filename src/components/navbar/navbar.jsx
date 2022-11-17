@@ -21,7 +21,15 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     display: "flex",
     
-   
+  },
+  root: {
+    top: '100px',
+    right: '30px',
+    "&MuiPaper-root": {
+
+      top: '100px',
+      right: '30px'
+    }
   },
   logo: {
     flexGrow: "1",
@@ -33,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
-    fontSize: "20px",
+    fontSize: "18px",
     color: "black",
-    marginLeft: theme.spacing(3),
+    marginLeft: theme.spacing(1),
     "&:hover": {
       borderBottom: "1px solid black",
     },
@@ -47,7 +55,7 @@ const Navbar = () => {
   const open = Boolean(anchorEl)
   const classes = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("ms"));
 
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget)
@@ -83,18 +91,24 @@ const Navbar = () => {
               aria-haspopup={true}
               aria-expanded={open ? "true" : undefined}
             >Servicii</Button>
-            <Link to="/galerie" className={classes.link}>
-              Galerie
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              Contact
-            </Link>
-            <Stack>
-              <Menu id="resources-menu" open={open}
+            <Button>
+              <Link to="/galerie" className={classes.link}>
+                Galerie
+              </Link>
+            </Button>
+            <Button>
+              <Link to="/contact" className={classes.link}>
+                Contact
+              </Link>
+            </Button>
+            <Stack >
+              <Menu 
+                id="resources-menu" open={open}
                 MenuListProps={{
                   'aria-labelledby': "resources-button"
                 }}
                 onClick={handleClose}
+                
               >
                 <MenuItem>
                 <Link onClick={handleClose}to="/valorificare" className={classes.link}>
