@@ -41,3 +41,72 @@ export const subcomponents = [
         "frontImg": "https://i.shgcdn.com/a856fb78-93ba-48de-94be-b251c59de508/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
     }
 ]
+
+export const valorificare = [
+    {
+        "title":"Level 1 - Protejarea Detaliilor",
+        "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
+        "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
+        "imgPath":"https://scontent.flhr4-3.fna.fbcdn.net/v/t39.30808-6/284502693_5076702009104189_6810158757649671636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DGA6sHNlZcMAX-on8HV&_nc_ht=scontent.flhr4-3.fna&oh=00_AfDvf9kkyUKPOCkIkH7A3Jq-MKiQp6TtdgC0SG-IUN0ncQ&oe=637CCC1E",
+        "description": [
+            ["Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat."],
+            ["Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal."],
+            ["Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile)."],
+            ["Vehiculul se usucă manual cu prosoape din microfibră adânci."],
+            ["Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți."],
+            ["Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol."],
+            ["Anvelopele sunt îmbrăcate."],
+            [" Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate."],
+    ],
+    "sealent": "Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ",
+    "subDescription": 
+        {
+            "title": "Interior",
+            "description": [
+                ["Mocheta aspirata"],
+                ["Geamurile sunt curatate pe interior"],
+                ["Interior trim and surfaces are all cleaned using aerospace-grade products."],
+            ]
+        },
+        
+        "title1":"Why choose the Level 2 Enhancement Detail?",
+        "whyChooseUS": [
+            ["Interior trim and surfaces are all cleaned using aerospace-grade products."],
+            ["To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection."],
+            ["This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."]
+        ]
+    },
+    {
+        "title":"Level 2 - Protejarea Detaliilor",
+        "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
+        "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
+        "imgPath":"https://scontent.flhr4-3.fna.fbcdn.net/v/t39.30808-6/284502693_5076702009104189_6810158757649671636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DGA6sHNlZcMAX-on8HV&_nc_ht=scontent.flhr4-3.fna&oh=00_AfDvf9kkyUKPOCkIkH7A3Jq-MKiQp6TtdgC0SG-IUN0ncQ&oe=637CCC1E",
+        "description": [
+            ["Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat."],
+            ["Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal."],
+            ["Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile)."],
+            ["Vehiculul se usucă manual cu prosoape din microfibră adânci."],
+            ["Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți."],
+            ["Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol."],
+            ["Anvelopele sunt îmbrăcate."],
+            [" Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate."],
+    ],
+    "sealent": "Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ",
+    "subDescription": 
+        {
+            "title": "Interior",
+            "description": [
+                ["Mocheta aspirata"],
+                ["Geamurile sunt curatate pe interior"],
+                ["Interior trim and surfaces are all cleaned using aerospace-grade products."],
+            ]
+        },
+        
+        "title1":"Why choose the Level 2 Enhancement Detail?",
+        "whyChooseUS": [
+            ["Interior trim and surfaces are all cleaned using aerospace-grade products."],
+            ["To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection."],
+            ["This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."]
+        ]
+    },
+]
