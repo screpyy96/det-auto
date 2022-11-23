@@ -52,8 +52,8 @@ export const valorificare = [
         "title":"Level 1 - Protejarea Detaliilor",
         "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
         "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
-        "imgPath":"https://scontent.flhr4-3.fna.fbcdn.net/v/t39.30808-6/284502693_5076702009104189_6810158757649671636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DGA6sHNlZcMAX-on8HV&_nc_ht=scontent.flhr4-3.fna&oh=00_AfDvf9kkyUKPOCkIkH7A3Jq-MKiQp6TtdgC0SG-IUN0ncQ&oe=637CCC1E",
-        "description": [
+        "imgPath":"https://www.topgear.com/sites/default/files/2022/07/1_1.jpg",
+         "description": [
             ["Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat."],
             ["Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal."],
             ["Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile)."],
@@ -86,7 +86,7 @@ export const valorificare = [
         "title":"Level 2 - Protejarea Detaliilor",
         "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
         "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
-        "imgPath":"https://scontent.flhr4-3.fna.fbcdn.net/v/t39.30808-6/284502693_5076702009104189_6810158757649671636_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DGA6sHNlZcMAX-on8HV&_nc_ht=scontent.flhr4-3.fna&oh=00_AfDvf9kkyUKPOCkIkH7A3Jq-MKiQp6TtdgC0SG-IUN0ncQ&oe=637CCC1E",
+        "imgPath":"https://www.topgear.com/sites/default/files/2022/07/1_1.jpg",
         "description": [
             ["Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat."],
             ["Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal."],
