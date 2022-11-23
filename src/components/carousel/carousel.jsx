@@ -17,10 +17,10 @@ const Carousele = () => {
         autoPlay={true}
         showArrows={false}
       >
-        {poze.map((p) => {
+        {poze.map((p, key) => {
           return (
-            <div>
-              <img src={p} alt='p' style={{height: '63vh'}} />
+            <div key={key}>
+              <img src={p} alt='p' style={{height: '70vh'}} />
             </div>
           );
         })}

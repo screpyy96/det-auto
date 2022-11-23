@@ -2,6 +2,8 @@ import { Button } from '@mui/material';
 import styled from 'styled-components';
 
 export const ContactWrapper = styled.div`
+background: red;
+color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
