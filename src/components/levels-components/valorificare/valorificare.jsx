@@ -1,45 +1,47 @@
-import { Button } from '@material-ui/core'
-import React, { useState } from 'react'
-import {ValorificaComponent} from './valorifica-component'
-import {valorificare} from '../../../data/db'
+import React, { useEffect, useState } from 'react'
 
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
+
+import { valorificare } from '../../../data/db';
+import { ValorificaComponent } from './valorifica-component';
+// console.log(valorificare)
+// console.log(level1)
 const Valorificare = () => {
-  const level1 = valorificare[0]
-  const level2 = valorificare[1]
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+ 
+    const [value, setValue] = useState('1');
 
-
-    const [isShown, setIsShown] = useState(true)
-    const [isShown1, setIsShown1] = useState(false)
-    const [isShown2, setIsShown2] = useState(false)
-    const [isShown3, setIsShown3] = useState(false)
-    const [isShown4, setIsShown4] = useState(false)
-
-    const handleClickEvent1 = () => {
-        setIsShown(!isShown)
-        setIsShown1(!isShown1)
-    }
-    const handleClickEvent2 = () => {
-        setIsShown(!isShown1)
-        setIsShown1(!isShown2)
-    }
-
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
 
   return (
     <div style={{display: "inline-flex"}}>
-        <div>
-            <Button variant='contained' color='primary' onClick={handleClickEvent1}>Level 1</Button>
-            {isShown && (
-            <ValorificaComponent level1={level1}/>
-            
-            )}
-        </div>
-        {/* <div>
-            <Button variant='contained' color='primary' onClick={handleClickEvent2}>Level 2</Button>
-            {isShown && (
-            <ValorificaComponent level2={level2}/>
-            
-            )}
-        </div> */}
+        <Box sx={{ width: '100%', typography: 'body1' }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Item One" value="1" />
+            <Tab label="Item Two" value="2" />
+            <Tab label="Item Three" value="3" />
+          </TabList>
+        </Box>
+          {valorificare.map((i, id) => {
+            return(
+        <TabPanel value={`${i.id}`} key={id}>
+          <ValorificaComponent data={i} />
+        </TabPanel>
+
+            )
+            })}
+      </TabContext>
+    </Box>
        
        
     </div>

@@ -8,6 +8,7 @@ import Contact from './pages/contact';
 import Despre from './pages/despre';
 import Galerie from './pages/galerie';
 import Home from './pages/home';
+import { Level1 } from './pages/level1';
 import Pachete from './pages/pachete';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Galerie path='/galerie' />
         <Contact path='/contact' />
         <Valorificare path='/valorificare'/>
+        <Level1 path='/level1'/>
       </Router>
     </div>
   );

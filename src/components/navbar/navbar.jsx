@@ -7,12 +7,17 @@ import {
   useTheme,
   useMediaQuery,
   Button,
+  Paper,
+  ClickAwayListener,
+  MenuList,
+  Grow,
+  Popper,
 
 } from "@material-ui/core";
-import {Menu, MenuItem} from '@mui/material'
-import { Stack } from "@mui/system";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { MenuItem} from '@mui/material'
 import { Link } from "@reach/router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import DrawerComponent from "./drawer";
 
@@ -51,22 +56,51 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null)
-  const open = Boolean(anchorEl)
+
   const classes = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("ms"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget)
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null);
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target)
+    ) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    } else if (event.key === 'Escape') {
+      setOpen(false);
+    }
   }
 
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = useRef(open);
+  useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open, anchorRef]);
+
 
   return (
-    <AppBar position="static" className={classes.navbar}>
+    <AppBar  position="static" className={classes.navbar}>
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
@@ -87,7 +121,7 @@ const Navbar = () => {
                 Despre
               </Link>
             </Button>
-            <Button to="/"  className={classes.link} id="resources-button" onClick={handleClick} aria-controls={open ? 'resources-menu':undefined}
+            <Button to="/"  className={classes.link} id="resources-button"  aria-controls={open ? 'resources-menu':undefined}
               aria-haspopup={true}
               aria-expanded={open ? "true" : undefined}
             >Servicii</Button>
@@ -101,37 +135,55 @@ const Navbar = () => {
                 Contact
               </Link>
             </Button>
-            <Stack >
-              <Menu 
-                id="resources-menu" open={open}
-                MenuListProps={{
-                  'aria-labelledby': "resources-button"
-                }}
-                onClick={handleClose}
-                
-              >
-                <MenuItem>
-                <Link onClick={handleClose}to="/valorificare" className={classes.link}>
-                 Valorificare
-                </Link>
-                  </MenuItem>
-                  <MenuItem>
-                  <Link onClick={handleClose}to="/protejare" className={classes.link}>
-                  protejare
-                </Link>
-                </MenuItem>
-                <MenuItem>
-                <Link onClick={handleClose}to="/mentinere" className={classes.link}>
-                 mentinere
-                </Link>
-                  </MenuItem>
-                <MenuItem>
-                <Link onClick={handleClose}to="/personalizare" className={classes.link}>
-                 personalizare
-                </Link>
-                  </MenuItem>
-              </Menu>
-            </Stack>
+      <div>
+        <Button
+          ref={anchorRef}
+          id="composition-button"
+          aria-controls={open ? 'composition-menu' : undefined}
+          aria-expanded={open ? 'true' : undefined}
+          aria-haspopup="true"
+          onClick={handleToggle}
+        >
+          <Link to=""
+          className={classes.link}
+          >Servicii</Link>
+          <ExpandMoreIcon/>
+        </Button>
+        <Popper 
+          open={open}
+          anchorEl={anchorRef?.current}
+          role={undefined}
+          placement="bottom-start"
+          transition
+          disablePortal
+          style={{position: 'relative', zIndex: '2'}}
+        >
+          {({ TransitionProps, placement }) => (
+            <Grow
+              {...TransitionProps}
+              style={{
+                transformOrigin:
+                  placement === 'top-start' ? 'right top' : 'right top',
+              }}
+            >
+              <Paper>
+                <ClickAwayListener onClickAway={handleClose}>
+                  <MenuList
+                    autoFocusItem={open}
+                    id="composition-menu"
+                    aria-labelledby="composition-button"
+                    onKeyDown={handleListKeyDown}
+                  >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                  </MenuList>
+                </ClickAwayListener>
+              </Paper>
+            </Grow>
+          )}
+        </Popper>
+      </div>
           </div>
         )}
       </Toolbar>

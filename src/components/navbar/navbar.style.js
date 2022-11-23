@@ -77,7 +77,7 @@ const BrandName = styled.a`
 
 const NavigationMenu = styled.div`
   margin-left: auto;
-  z-index: 99;
+  z-index: 1;
 `;
 
 const BurgerWrapper = styled.div`

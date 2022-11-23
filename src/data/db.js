@@ -4,25 +4,29 @@ export const cards = [
             "title": "Valorificare",
             "frontImg": "https://i.shgcdn.com/545091da-9d3f-42e0-9bc4-a8d5a9f5b5b7/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "description": "Serviciile noastre de detailing ofer full aspect asupra tratamentelor pentru valorificarea, restaurare si viitoarele mentineri ale masinii",
-            "backImg": ""
+            "backImg": "",
+            "urlPath": "/valorificare"
         },
         {
             "title": "Protejare",
             "frontImg": "https://i.shgcdn.com/ec2da442-5a27-440e-942e-f3a18059e2cb/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "description": "With our design paint protection film, we can cover any painted, carbon fibre or smooth finished paint of the car, even interior trims",
-            "backImg": ""
+            "backImg": "",
+            "urlPath": "/protejare"
         },
         {
             "title": "Mentinere",
             "frontImg": "https://i.shgcdn.com/531fbc5c-8c09-45d1-8b44-9a716e120d1b/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "description": "Serviciile noastre de detailing ofer full aspect asupra tratamentelor pentru valorificarea, restaurare si viitoarele mentineri ale masinii",
-            "backImg": ""
+            "backImg": "",
+            "urlPath": "/mentinere"
         },
         {
             "title": "Personalizare",
             "frontImg": "https://i.shgcdn.com/96d67825-9112-4f67-b360-55c2eb5bcad3/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
             "description": "Serviciile noastre de detailing ofer full aspect asupra tratamentelor pentru valorificarea, restaurare si viitoarele mentineri ale masinii",
-            "backImg": ""
+            "backImg": "",
+            "urlPath": "/personalizare"
         }
     ]
 
@@ -43,7 +47,8 @@ export const subcomponents = [
 ]
 
 export const valorificare = [
-    {
+    {   
+        "id": "1",
         "title":"Level 1 - Protejarea Detaliilor",
         "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
         "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
@@ -76,7 +81,8 @@ export const valorificare = [
             ["This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."]
         ]
     },
-    {
+    {   
+        "id":"2",
         "title":"Level 2 - Protejarea Detaliilor",
         "subTitle":" Exterior – Curatare/Clatire/Decontaminare.",
         "header": "21 stagii DESPRE PROCESUL DE CURATARE:",
