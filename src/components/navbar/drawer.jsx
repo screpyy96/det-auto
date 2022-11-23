@@ -1,20 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
-  ClickAwayListener,
     Divider,
   Drawer,
-  Grow,
   IconButton,
   List,
   ListItem,
   ListItemText,
   makeStyles,
-  MenuItem,
-  MenuList,
-  Paper,
-  Popper,
-  Button,
   Accordion,
   AccordionSummary,
   Typography,
@@ -39,34 +32,11 @@ const useStyles = makeStyles(()=>({
 
 function DrawerComponent() {
   
-  const [open, setOpen] = useState(false);
+  const [open] = useState(false);
   const anchorRef = useRef(null);
   
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
   
-  const handleClose = (event) => {
-    if (
-      anchorRef.current &&
-      anchorRef.current.contains(event.target)
-      ) {
-        return;
-      }
-      
-      setOpen(!open);
-      
-  };
-  
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    } else if (event.key === 'Escape') {
-      setOpen(false);
-    }
-  }
-  
+
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = useRef(open);
   useEffect(() => {
