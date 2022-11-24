@@ -47,7 +47,7 @@ const ContactForm = () => {
 
   return (
     <ContactWrapper>
-      <Typography>CONTACT</Typography>
+      <Typography style={{ color: 'black', paddingBottom: '20px' }}>CONTACT</Typography>
       <StyledBox>
         <Formik
           initialValues={{
