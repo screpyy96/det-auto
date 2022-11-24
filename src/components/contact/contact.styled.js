@@ -2,8 +2,8 @@ import { Button } from '@mui/material';
 import styled from 'styled-components';
 
 export const ContactWrapper = styled.div`
-background: red;
-color: white;
+  background: red;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,6 @@ color: white;
 export const SendBtn = styled.div`
   display: flex;
   justify-content: center;
- 
 `;
 
 export const ErrorStyle = styled.div`
@@ -45,7 +44,6 @@ export const StyledBox = styled.div`
     grid-template-columns: 1fr;
     height: 100%;
   }
-  
 `;
 
 // export const SendBtn = styled.input`

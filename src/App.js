@@ -11,21 +11,18 @@ import { Level1 } from './pages/level1';
 import Pachete from './pages/pachete';
 
 function App() {
-
-
   return (
-    <div className='App'>
+    <div className="App">
       <Whatsap />
-      <Navbar/>
-
+      <Navbar />
       <Router>
-        <Home path='/' />
-        <Despre path='/despre' />
-        <Pachete path='/servicii' />
-        <Galerie path='/galerie' />
-        <Contact path='/contact' />
-        <Valorificare path='/valorificare'/>
-        <Level1 path='/level1'/>
+        <Home path="/" />
+        <Despre path="/despre" />
+        <Pachete path="/servicii" />
+        <Galerie path="/galerie" />
+        <Contact path="/contact" />
+        <Valorificare path="/valorificare" />
+        <Level1 path="/level1" />
       </Router>
     </div>
   );

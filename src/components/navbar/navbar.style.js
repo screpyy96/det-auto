@@ -3,39 +3,36 @@ import { Link } from '@reach/router';
 import { Accordion } from '@mui/material/';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-
+import { ListItem } from '@material-ui/core';
 
 const AccordionWrapper = styled(Accordion)`
-&&{
-  /* background: transparent; */
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  min-height:initial;
-  margin-top: -12px;
-
-}
+  && {
+    /* background: transparent; */
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    min-height: initial;
+    margin-top: -12px;
+  }
 `;
 const AccordionTitle = styled(AccordionSummary)`
-&&{
-  /* background: transparent; */
-  border: none;
-  min-height:initial;
-  box-shadow: none;
-  background:  transparent;
-  padding: 0;
-  /* margin-top: -12px; */
-
-}
+  && {
+    /* background: transparent; */
+    border: none;
+    min-height: initial;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    /* margin-top: -12px; */
+  }
 `;
 const DetailsAccordion = styled(AccordionDetails)`
-&&{
-  /* background: transparent; */
-  border: none;
-  min-height:initial;
-  padding: 0;
-
-}
+  && {
+    /* background: transparent; */
+    border: none;
+    min-height: initial;
+    padding: 0;
+  }
 `;
 
 const NavWrapper = styled.nav`
@@ -56,15 +53,12 @@ const NavWrapper = styled.nav`
 const LinkStyle = styled(Link)`
   text-decoration: none;
   display: block;
-  width: 100%;
+  width: 90%;
   list-style-type: none;
   color: black;
-  width: 100%;
-
-  &:hover {
-    border-bottom: 2px solid black; 
-    color: red;
-  }
+`;
+const AccordionStyle = styled.p`
+  font-size: 20px;
 `;
 
 const BrandName = styled.a`
@@ -128,59 +122,13 @@ const LiStyle = styled.li`
   text-transform: uppercase;
 `;
 
-
-
-// DropDown
-
-const DropDown = styled.ul `
-visibility: hidden;
-  opacity: 0;
-  position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 1rem;
-  left: 0;
-  display: none;
-  z-index: 999;
-
-  &:hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-  }
-`
-
-
-const MuieLi = styled.li`
-display: block;
-transition-duration: 0.5s;
-clear: both;
-width: 100%;
-
-&:hover {
-  cursor: pointer;
-}
+const ListItemStyle = styled(ListItem)`
+  text-align: center;
 `;
-const DropLink = styled(Link)` 
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-`
-// .dropdownn-content {
-//   display: none;
-//   position: absolute;
-//   z-index: 1;
-// }
-
-
-// .dropdownn:hover .dropdownn-content {
-//   display: block;
-// }
-
 
 export {
-  DropLink,
-  DropDown,
+  AccordionStyle,
+  ListItemStyle,
   NavWrapper,
   LinkStyle,
   NavigationMenu,
@@ -188,7 +136,6 @@ export {
   UlStyle,
   BurgerWrapper,
   LiStyle,
-  MuieLi,
   AccordionWrapper,
   AccordionTitle,
   DetailsAccordion

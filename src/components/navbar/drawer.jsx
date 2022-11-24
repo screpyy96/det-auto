@@ -1,41 +1,41 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
-    Divider,
+  Divider,
   Drawer,
   IconButton,
   List,
-  ListItem,
   ListItemText,
   makeStyles,
   Accordion,
   AccordionSummary,
-  Typography,
-  AccordionDetails
-} from "@material-ui/core";
-import { Link } from "@reach/router";
+  AccordionDetails,
+  MenuList,
+  MenuItem
+} from '@material-ui/core';
 
-import MenuIcon from "@material-ui/icons/Menu";
+import MenuIcon from '@material-ui/icons/Menu';
+import { AccordionStyle, LinkStyle, ListItemStyle } from './navbar.style';
 
-const useStyles = makeStyles(()=>({
-    link:{
-        textDecoration:"none",
-        color: "blue",
-        fontSize: "20px",
-    },
-    icon:{
-        color: "black"
-    }
+const useStyles = makeStyles(() => ({
+  link: {
+    textDecoration: 'none',
+    color: 'blue',
+    fontSize: '20px'
+  },
+  icon: {
+    color: 'black'
+  },
+  accordion: {
+    margin: '0',
+    padding: '0',
+    marginLeft: '13px'
+  }
 }));
 
-
-
 function DrawerComponent() {
-  
   const [open] = useState(false);
   const anchorRef = useRef(null);
-  
-  
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = useRef(open);
@@ -43,64 +43,86 @@ function DrawerComponent() {
     if (prevOpen.current === true && open === false) {
       anchorRef.current.focus();
     }
-  
+
     prevOpen.current = open;
   }, [open, anchorRef]);
-    const classes = useStyles();
+  const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer
-        open={openDrawer}
-        onClose={() => setOpenDrawer(false)}
-      >
+      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
-        <ListItem onClick={() => setOpenDrawer(false)}>
+          <ListItemStyle style={{ textAlign: 'center' }} onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/" className={classes.link}>Acasa</Link>
+              <LinkStyle to="/" className={classes.link}>
+                Acasa
+              </LinkStyle>
             </ListItemText>
-          </ListItem>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          </ListItemStyle>
+          <Divider />
+          <ListItemStyle onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/despre" className={classes.link}>Despre</Link>
+              <LinkStyle to="/despre" className={classes.link}>
+                Despre
+              </LinkStyle>
             </ListItemText>
-          </ListItem>
-          <Divider/>
-          <div>
-          <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Servicii</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-          </div>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          </ListItemStyle>
+          <Accordion
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              flexDirection: 'column'
+            }}>
+            <AccordionSummary
+              className={classes.accordion}
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header">
+              <AccordionStyle>Servicii</AccordionStyle>
+            </AccordionSummary>
+            <AccordionDetails>
+              <MenuList
+                autoFocusItem={open}
+                id="composition-menu"
+                aria-labelledby="composition-button">
+                <Divider />
+                <MenuItem onClick={() => setOpenDrawer(false)}>
+                  <LinkStyle to="/valorificare">Valorificare</LinkStyle>
+                </MenuItem>
+                <MenuItem onClick={() => setOpenDrawer(false)}>
+                  <LinkStyle to="/protejare">Protejare</LinkStyle>
+                </MenuItem>
+                <MenuItem onClick={() => setOpenDrawer(false)}>
+                  <LinkStyle to="/mentinere">Mentinere</LinkStyle>
+                </MenuItem>
+                <MenuItem onClick={() => setOpenDrawer(false)}>
+                  <LinkStyle to="/personalizare">Personalizare</LinkStyle>
+                </MenuItem>
+              </MenuList>
+            </AccordionDetails>
+          </Accordion>
+          <Divider />
+          <ListItemStyle onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/about" className={classes.link}>Galerie</Link>
+              <LinkStyle to="/about" className={classes.link}>
+                Galerie
+              </LinkStyle>
             </ListItemText>
-          </ListItem>
-          <Divider/>
-          <ListItem onClick={() => setOpenDrawer(false)}>
+          </ListItemStyle>
+          <Divider />
+          <ListItemStyle onClick={() => setOpenDrawer(false)}>
             <ListItemText>
-              <Link to="/contact" className={classes.link}>Contact</Link>
+              <LinkStyle to="/contact" className={classes.link}>
+                Contact
+              </LinkStyle>
             </ListItemText>
-          </ListItem>
-          
-          <Divider/>
+          </ListItemStyle>
+
+          <Divider />
         </List>
       </Drawer>
-      <IconButton onClick={() => setOpenDrawer(!openDrawer)}className={classes.icon}>
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)} className={classes.icon}>
         <MenuIcon />
       </IconButton>
     </>
