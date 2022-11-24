@@ -121,9 +121,9 @@ const Navbar = () => {
               aria-expanded={open ? 'true' : undefined}
               aria-haspopup="true"
               onClick={handleToggle}>
-              <Link to="" className={classes.link}>
+              <p to="" className={classes.link}>
                 Servicii
-              </Link>
+              </p>
               <ExpandMoreIcon />
             </Button>
             <Popper
