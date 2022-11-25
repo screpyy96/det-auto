@@ -50,7 +50,7 @@ function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
     <>
-      <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+      <Drawer anchor="right" open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           <ListItemStyle style={{ textAlign: 'center' }} onClick={() => setOpenDrawer(false)}>
             <ListItemText>

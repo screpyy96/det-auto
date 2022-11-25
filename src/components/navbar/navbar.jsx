@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import {
-  AppBar,
+  // AppBar,
   Toolbar,
   CssBaseline,
   Typography,
@@ -20,12 +20,13 @@ import { Link } from '@reach/router';
 import { useEffect, useRef, useState } from 'react';
 
 import DrawerComponent from './drawer';
-import { LinkStyle } from './navbar.style';
+import { AppBarStyled, LinkStyle } from './navbar.style';
 
 const useStyles = makeStyles((theme) => ({
   navlinks: {
     marginLeft: theme.spacing(1),
     display: 'flex'
+    // marginTop: '12 rem'
   },
   root: {
     top: '100px',
@@ -94,7 +95,7 @@ const Navbar = () => {
   }, [open, anchorRef]);
 
   return (
-    <AppBar position="static" className={classes.navbar}>
+    <AppBarStyled position="static" className={classes.navbar}>
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
@@ -178,7 +179,7 @@ const Navbar = () => {
           </div>
         )}
       </Toolbar>
-    </AppBar>
+    </AppBarStyled>
   );
 };
 

@@ -61,8 +61,59 @@ export const valorificare = [
     id: '1',
     title: 'Level 1 - Protejarea Detaliilor',
     subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
+    header: '21 DE STAGII DESPRE PROCESUL DE CURATARE:',
+    imgPath:
+      'https://i.shgcdn.com/8152b67e-9de6-4ffc-a37c-25cb1217482c/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+
+    description: [
+      [
+        'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'
+      ],
+      [
+        'Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal.'
+      ],
+      [
+        'Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile).'
+      ],
+      ['Vehiculul se usucă manual cu prosoape din microfibră adânci.'],
+      [
+        'Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți.'
+      ],
+      [
+        'Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol.'
+      ],
+      ['Anvelopele sunt îmbrăcate.'],
+      [' Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate.']
+    ],
+    sealent:
+      'Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ',
+    subDescription: {
+      title: 'Interior',
+      description: [
+        ['Mocheta aspirata'],
+        ['Geamurile sunt curatate pe interior'],
+        ['Interior trim and surfaces are all cleaned using aerospace-grade products.']
+      ]
+    },
+
+    title1: 'Why choose the Level 2 Enhancement Detail?',
+    whyChooseUS: [
+      ['Interior trim and surfaces are all cleaned using aerospace-grade products.'],
+      [
+        'To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection.'
+      ],
+      [
+        "This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."
+      ]
+    ]
+  },
+  {
+    id: '3',
+    title: 'Level 3 - Protejarea Detaliilor',
+    subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
     header: '21 stagii DESPRE PROCESUL DE CURATARE:',
-    imgPath: 'https://www.topgear.com/sites/default/files/2022/07/1_1.jpg',
+    imgPath:
+      'https://i.shgcdn.com/297bf929-a9fe-4ae1-afdc-acb9b92042f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
     description: [
       [
         'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'
@@ -110,7 +161,155 @@ export const valorificare = [
     title: 'Level 2 - Protejarea Detaliilor',
     subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
     header: '21 stagii DESPRE PROCESUL DE CURATARE:',
-    imgPath: 'https://www.topgear.com/sites/default/files/2022/07/1_1.jpg',
+    imgPath:
+      'https://i.shgcdn.com/297bf929-a9fe-4ae1-afdc-acb9b92042f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+    description: [
+      [
+        'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'
+      ],
+      [
+        'Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal.'
+      ],
+      [
+        'Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile).'
+      ],
+      ['Vehiculul se usucă manual cu prosoape din microfibră adânci.'],
+      [
+        'Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți.'
+      ],
+      [
+        'Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol.'
+      ],
+      ['Anvelopele sunt îmbrăcate.'],
+      [' Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate.']
+    ],
+    sealent:
+      'Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ',
+    subDescription: {
+      title: 'Interior',
+      description: [
+        ['Mocheta aspirata'],
+        ['Geamurile sunt curatate pe interior'],
+        ['Interior trim and surfaces are all cleaned using aerospace-grade products.']
+      ]
+    },
+
+    title1: 'Why choose the Level 2 Enhancement Detail?',
+    whyChooseUS: [
+      ['Interior trim and surfaces are all cleaned using aerospace-grade products.'],
+      [
+        'To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection.'
+      ],
+      [
+        "This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."
+      ]
+    ]
+  },
+  {
+    id: '4',
+    title: 'Level 4 - Protejarea Detaliilor',
+    subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
+    header: '21 stagii DESPRE PROCESUL DE CURATARE:',
+    imgPath:
+      'https://i.shgcdn.com/297bf929-a9fe-4ae1-afdc-acb9b92042f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+    description: [
+      [
+        'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'
+      ],
+      [
+        'Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal.'
+      ],
+      [
+        'Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile).'
+      ],
+      ['Vehiculul se usucă manual cu prosoape din microfibră adânci.'],
+      [
+        'Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți.'
+      ],
+      [
+        'Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol.'
+      ],
+      ['Anvelopele sunt îmbrăcate.'],
+      [' Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate.']
+    ],
+    sealent:
+      'Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ',
+    subDescription: {
+      title: 'Interior',
+      description: [
+        ['Mocheta aspirata'],
+        ['Geamurile sunt curatate pe interior'],
+        ['Interior trim and surfaces are all cleaned using aerospace-grade products.']
+      ]
+    },
+
+    title1: 'Why choose the Level 2 Enhancement Detail?',
+    whyChooseUS: [
+      ['Interior trim and surfaces are all cleaned using aerospace-grade products.'],
+      [
+        'To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection.'
+      ],
+      [
+        "This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."
+      ]
+    ]
+  },
+  {
+    id: '5',
+    title: 'Level 5 - Protejarea Detaliilor',
+    subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
+    header: '21 stagii DESPRE PROCESUL DE CURATARE:',
+    imgPath:
+      'https://i.shgcdn.com/297bf929-a9fe-4ae1-afdc-acb9b92042f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
+    description: [
+      [
+        'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'
+      ],
+      [
+        'Roțile sunt curățate folosind un produs de curățare neacid pe bază de citrice și perii special concepute pentru păr de cal.'
+      ],
+      [
+        'Închiderile ușilor, capacul benzinei, arcadele și părțile secțiunilor inferioare vor fi curățate (acolo unde sunt accesibile).'
+      ],
+      ['Vehiculul se usucă manual cu prosoape din microfibră adânci.'],
+      [
+        'Vopseaua este tratată cu o bară de argilă (ușoară sau agresivă) îndepărtând contaminanții de suprafață lipiți.'
+      ],
+      [
+        'Solventul de corp este aplicat pentru a dizolva și îndepărta gudronul, murdăria de drum, depunerile de rouă de miere și stropi de insecte și alte substanțe pe bază de petrol.'
+      ],
+      ['Anvelopele sunt îmbrăcate.'],
+      [' Materialele plastice exterioare și ornamentele ușilor sunt îmbrăcate.']
+    ],
+    sealent:
+      'Speak to our team for recomendations on ceramic coatings for the paintwork, windows and wheels ',
+    subDescription: {
+      title: 'Interior',
+      description: [
+        ['Mocheta aspirata'],
+        ['Geamurile sunt curatate pe interior'],
+        ['Interior trim and surfaces are all cleaned using aerospace-grade products.']
+      ]
+    },
+
+    title1: 'Why choose the Level 2 Enhancement Detail?',
+    whyChooseUS: [
+      ['Interior trim and surfaces are all cleaned using aerospace-grade products.'],
+      [
+        'To seal freshly corrected paintwork we recommend Ceramic Coating for added glossiness, hydrophobic properties and easier maintenance or PPF for ultimate protection.'
+      ],
+      [
+        "This is our entry level paint correction detail, which removes minor imperfections including fine swirls/scratches in the clearcoat/topcoat of the paint. It is perfect for new cars, or cars with dulled paint that need a refresh. This process results in 70% to 80% 'correction factor', it will not, however, remove any deeper scratches."
+      ]
+    ]
+  },
+  {
+    id: '6',
+    title: 'Level 6 - Protejarea Detaliilor',
+    subTitle: ' Exterior – Curatare/Clatire/Decontaminare.',
+    header: '21 stagii DESPRE PROCESUL DE CURATARE:',
+    imgPath:
+      'https://i.shgcdn.com/297bf929-a9fe-4ae1-afdc-acb9b92042f7/-/format/auto/-/preview/3000x3000/-/quality/lighter/',
     description: [
       [
         'Vehiculul este spălat cu șampon cu PH neutru folosind un sistem de găleți de protecție dublă pentru a preveni transportarea pietrelor și a particulelor cu muchii ascuțite în mașină prin intermediul mănușii de spălat.'

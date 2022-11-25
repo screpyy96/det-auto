@@ -1,52 +1,59 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
+import {
+  ContainerWrapper,
+  DescriptionContainer,
+  ListContainer,
+  SubTitle,
+  TitleStyle
+} from './valorificare.styled';
 
 export const ValorificaComponent = ({ data }) => {
   console.log(data);
   return (
-    <div>
+    <ContainerWrapper>
       <div>
-        <img src={data.imgPath} alt="imagine de cct" width={400} />
+        <img src={data.imgPath} alt="imagine de cct" width={500} height={'100%'} />
       </div>
-      <h2>{data.title}</h2>
-      <h4>{data.subTitle}</h4>
-      <h4>{data.header}</h4>
-      <h6>
-        {data.description.map((i, key) => {
-          return (
-            <div key={key}>
-              <ol>
-                <li>{i}</li>
-              </ol>
-            </div>
-          );
-        })}
-      </h6>
-      <h4>{data.sealent}</h4>
-      <h5>{data.subDescription.title}</h5>
-      <h6>
-        {data.subDescription.description.map((i, key) => {
-          return (
-            <div key={key}>
-              <ul>
+      <DescriptionContainer>
+        <TitleStyle>{data.title}</TitleStyle>
+        <SubTitle>{data.subTitle}</SubTitle>
+        <h4>{data.header}</h4>
+        <ListContainer>
+          {data.description.map((i, key) => {
+            return (
+              <ul key={key}>
                 <li>{i}</li>
               </ul>
-            </div>
-          );
-        })}
-      </h6>
-      <h6>
-        <p>{data.title1}</p>
-        {data.whyChooseUS.map((i, key) => {
-          return (
-            <div key={key}>
-              <ul>
-                <li>{i}</li>
-              </ul>
-            </div>
-          );
-        })}
-      </h6>
-    </div>
+            );
+          })}
+        </ListContainer>
+        <SubTitle>{data.sealent}</SubTitle>
+        <h5>{data.subDescription.title}</h5>
+        <ListContainer>
+          {data.subDescription.description.map((i, key) => {
+            return (
+              <div key={key}>
+                <ul>
+                  <li>{i}</li>
+                </ul>
+              </div>
+            );
+          })}
+        </ListContainer>
+        <ListContainer>
+          <p>{data.title1}</p>
+          {data.whyChooseUS.map((i, key) => {
+            return (
+              <div key={key}>
+                <ul>
+                  <li>{i}</li>
+                </ul>
+              </div>
+            );
+          })}
+        </ListContainer>
+      </DescriptionContainer>
+    </ContainerWrapper>
   );
 };

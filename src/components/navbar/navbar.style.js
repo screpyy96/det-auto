@@ -3,7 +3,7 @@ import { Link } from '@reach/router';
 import { Accordion } from '@mui/material/';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
-import { ListItem } from '@material-ui/core';
+import { AppBar, ListItem } from '@material-ui/core';
 
 const AccordionWrapper = styled(Accordion)`
   && {
@@ -126,7 +126,14 @@ const ListItemStyle = styled(ListItem)`
   text-align: center;
 `;
 
+const AppBarStyled = styled(AppBar)`
+  @media screen and (max-width: 768px) {
+    position: fixed;
+  }
+`;
+
 export {
+  AppBarStyled,
   AccordionStyle,
   ListItemStyle,
   NavWrapper,
